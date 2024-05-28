@@ -17,10 +17,10 @@ class UserSeeder extends Seeder
         User::factory(250)->create();
 
         User::create([
-            'name' => 'putri qolbiy nurhaliza',
-            'email' => 'c030322131@mahasiswa.poliban.ac.id',
+            'name' => 'Asa Zelig Pratama',
+            'email' => 'asa@gmail.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('mahasiswa'),
+            'password' => Hash::make('12344321'),
             'roles' => 'mahasiswa',
         ]);
     }
