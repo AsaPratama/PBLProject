@@ -59,7 +59,7 @@
                                 <h4>Jumlah Item</h4>
                             </div>
                             <div class="card-body">
-                                16
+                                20
                             </div>
                         </div>
                     </div>
