@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class note extends Model
 {
     use HasFactory;
 
-    public function lecturer()
-    {
-        return $this->belongsTo(User::class);
-    }
+    protected $table = 'note';
+
+    protected $fillable = ['isi'];
+
 }

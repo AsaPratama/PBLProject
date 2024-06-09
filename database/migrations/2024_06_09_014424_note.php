@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subjects', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->bigInteger('lecturer_id')->unsigned();
+        Schema::create('note', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('isi');
             $table->timestamps();
-
-            $table->foreign('lecturer_id', 'lecturerid_foreign')->references('id')->on('users');
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('note');
     }
 };

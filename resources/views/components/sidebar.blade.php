@@ -35,7 +35,7 @@
             </li>
 
             <li class="nav-item dropdown ">
-                <a href="# class="><i class="fas fa-sticky-note"></i><span>Notes</span></a>
+                <a href="{{ route('note.index') }}"> <i class="fas fa-sticky-note"></i><span>Notes</span></a>
             </li>
 
     </aside>

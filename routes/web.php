@@ -3,6 +3,8 @@
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\DashboardController;
 use App\Models\Gudang;
 use App\Models\Schedule;
 use Illuminate\Support\Facades\Route;
@@ -24,10 +26,20 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::get('home', function () {
-        return view('pages.app.dashboard-simpadu', ['type_menu' => '']);
-    })->name('home');
-    Route::resource('user', UserController::class);
+    /*Route::get('home', function () {
+        return view('pages.app.dashboard', ['type_menu' => '']);
+    })->name('home');*/
+    
+
+    //Dashboard
+    Route::resource('home', DashboardController::class);
+
+
+    //Route::resource('user', UserController::class);
     Route::resource('schedule', ScheduleController::class);
     Route::resource('gudang', GudangController::class);
+
+    //Notes
+    Route::resource('note', NoteController::class);
+
 });

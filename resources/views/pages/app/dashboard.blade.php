@@ -64,11 +64,39 @@
                         </div>
                     </div>
                 </div>
+
+
+
                 <div class="col-lg-12 col-md-6 col-sm-6 col-12">
-                    <textarea class="form-control" placeholder="Notes" id="floatingTextarea2" style="height: 100px" readonly></textarea>
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-info">
+                            <i class="far fa-archive"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                
+                            </div>
+                            <div class="card-body">
+                                @foreach($notes as $note)
+                                <tr>
+                                    <td>{{ $loop->index + 1 }}</td>.
+                                    <td>{{ $note->isi }}</td>
+                                </tr>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+
+
+
+
+
+
+
                 <div class="col-12 mt-2">
-                    <a href="{{ route('schedule.create') }}" class="btn btn-info"> <i class="fa fa-plus-circle"></i> &nbsp Notes Baru</a>
+                    <a href="{{ route('note.create') }}" class="btn btn-info"> <i class="fa fa-plus-circle"></i> &nbsp Notes Baru</a>
                 </div>
             </div>
         </section>
