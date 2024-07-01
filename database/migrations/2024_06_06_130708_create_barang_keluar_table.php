@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -21,6 +20,7 @@ return new class extends Migration
             $table->integer('kuantitas');
             $table->string('user');
             $table->timestamps();
+            $table->foreign('id')->references('id')->on('barang_masuk');
         });
     }
 

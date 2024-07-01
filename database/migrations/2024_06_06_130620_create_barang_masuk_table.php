@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('kuantitas');
             $table->string('user');
             $table->timestamps();
+
         });
     }
 

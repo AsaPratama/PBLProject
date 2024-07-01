@@ -13,19 +13,19 @@
             </li>
 
             <li class="nav-item dropdown ">
-                <a href="#" class=""><i class="fas fa-archive"></i><span>Data barang</span></a>
+                <a href="{{ route('barang.index') }}" class=""><i class="fas fa-archive"></i><span>Data barang</span></a>
             </li>
-            
+
             <li class="nav-item dropdown ">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-exchange"></i><span>Traffic Barang</span></a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="#">Barang Keluar</a>
+                        <a class="nav-link" href="{{ route('barang_keluar.index') }}">Barang Keluar</a>
                     </li>
                 </ul>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="nav-link" href="#">Barang Masuk</a>
+                        <a class="nav-link" href="{{ route('barang_masuk.index') }}">Barang Masuk</a>
                     </li>
                 </ul>
             </li>

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Edit Barang</h1>
+        <h1>Edit Barang Keluar</h1>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -14,13 +14,13 @@
             </div>
         @endif
 
-        <form action="{{ route('barang.update', $barang->kode_barang) }}" method="POST">
+        <form action="{{ route('barang_keluar.update', $barang->id) }}" method="POST">
             @csrf
             @method('PUT')
 
             <div class="form-group">
                 <label for="kode_barang">Kode Barang</label>
-                <input type="number" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang', $barang->kode_barang) }}" required readonly>
+                <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang', $barang->kode_barang) }}" required>
             </div>
 
             <div class="form-group">
@@ -29,13 +29,23 @@
             </div>
 
             <div class="form-group">
+                <label for="tanggal_waktu">Tanggal Waktu</label>
+                <input type="datetime-local" class="form-control" id="tanggal_waktu" name="tanggal_waktu" value="{{ old('tanggal_waktu', $barang->tanggal_waktu) }}" required>
+            </div>
+
+            <div class="form-group">
                 <label for="grade">Grade</label>
                 <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade', $barang->grade) }}" required>
             </div>
 
             <div class="form-group">
-                <label for="stok">Stok</label>
-                <input type="number" class="form-control" id="stok" name="stok" value="{{ old('stok', $barang->stok) }}" required>
+                <label for="kuantitas">Kuantitas</label>
+                <input type="number" class="form-control" id="kuantitas" name="kuantitas" value="{{ old('kuantitas', $barang->kuantitas) }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="user">User</label>
+                <input type="text" class="form-control" id="user" name="user" value="{{ old('user', $barang->user) }}" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
