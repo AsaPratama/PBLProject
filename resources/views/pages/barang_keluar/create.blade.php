@@ -1,53 +1,84 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class="container">
-        <h1>Create Barang Keluar</h1>
+@push('style')
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="{{ asset('library/selectric/public/selectric.css') }}">
+@endpush
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+@section('main')
+    <div class="main-content">
+        <section class="section">
+            <div class="section-header">
+                <h1>Create Barang Keluar</h1>
+                <div class="section-header-breadcrumb">
+                    <div class="breadcrumb-item active"><a href="{{ url('home') }}">Dashboard</a></div>
+                    <div class="breadcrumb-item"><a href="{{ route('barang_keluar.index') }}">Barang Keluar</a></div>
+                    <div class="breadcrumb-item">Create</div>
+                </div>
             </div>
-        @endif
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        @include('layouts.alert')
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Create Barang Keluar</h4>
+                            </div>
+                            <div class="card-body">
+                                <form method="POST" action="{{ route('barang_keluar.store') }}">
+                                    @csrf
 
-        <form action="{{ route('barang_keluar.store') }}" method="POST">
-            @csrf
+                                    <div class="form-group">
+                                        <label for="kode_barang">Kode Barang</label>
+                                        <input type="text" name="kode_barang" id="kode_barang" class="form-control" required>
+                                    </div>
 
-            <div class="form-group">
-                <label for="kode_barang">Kode Barang</label>
-                <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang') }}" required>
+                                    <div class="form-group">
+                                        <label for="nama_barang">Nama Barang</label>
+                                        <input type="text" name="nama_barang" id="nama_barang" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="tanggal_waktu">Tanggal Waktu</label>
+                                        <input type="datetime-local" name="tanggal_waktu" id="tanggal_waktu" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="grade">Grade</label>
+                                        <input type="text" name="grade" id="grade" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="kuantitas">Kuantitas</label>
+                                        <input type="number" name="kuantitas" id="kuantitas" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="user">User</label>
+                                        <input type="text" name="user" id="user" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Create</button>
+                                        <a href="{{ route('barang_keluar.index') }}" class="btn btn-secondary">Cancel</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="nama_barang">Nama Barang</label>
-                <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ old('nama_barang') }}" required>
-            </div>
-
-            <div class="form-group">
-                <label for="tanggal_waktu">Tanggal Waktu</label>
-                <input type="datetime-local" class="form-control" id="tanggal_waktu" name="tanggal_waktu" value="{{ old('tanggal_waktu') }}" required>
-            </div>
-
-            <div class="form-group">
-                <label for="grade">Grade</label>
-                <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade') }}" required>
-            </div>
-
-            <div class="form-group">
-                <label for="kuantitas">Kuantitas</label>
-                <input type="number" class="form-control" id="kuantitas" name="kuantitas" value="{{ old('kuantitas') }}" required>
-            </div>
-
-            <div class="form-group">
-                <label for="user">User</label>
-                <input type="text" class="form-control" id="user" name="user" value="{{ old('user') }}" required>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Create</button>
-        </form>
+        </section>
     </div>
 @endsection
+
+@push('scripts')
+    <!-- JS Libraries -->
+    <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
+    <!-- Page Specific JS File -->
+    <script src="{{ asset('js/page/features-posts.js') }}"></script>
+@endpush

@@ -15,7 +15,7 @@ class BarangKeluarController extends Controller
 
     public function create()
     {
-        return view('barang_keluar.create');
+        return view('pages.barang_keluar.create');
     }
 
     public function store(Request $request)
@@ -37,7 +37,7 @@ class BarangKeluarController extends Controller
     public function edit($id)
     {
         $barang = BarangKeluar::findOrFail($id);
-        return view('barang_keluar.edit', compact('barang'));
+        return view('pages.barang_keluar.edit', compact('barang'));
     }
 
     public function update(Request $request, $id)
@@ -68,6 +68,6 @@ class BarangKeluarController extends Controller
     public function riwayat()
     {
         $barangKeluar = BarangKeluar::all();
-        return view('barang_keluar.riwayat', compact('barangKeluar'));
+        return view('pages.barang_keluar.riwayat', compact('barangKeluar'));
     }
 }

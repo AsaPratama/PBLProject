@@ -15,14 +15,14 @@ class BarangMasukController extends Controller
 
     public function create()
     {
-        return view('barang_masuk.create');
+        return view('pages.barang_masuk.create');
     }
 
 
     public function edit($id)
     {
         $barang = BarangMasuk::findOrFail($id);
-        return view('barang_masuk.edit', compact('barang'));
+        return view('pages.barang_masuk.edit', compact('barang'));
     }
 
     public function store(Request $request)

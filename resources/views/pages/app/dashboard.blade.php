@@ -27,7 +27,7 @@
                                 <h4>Stok Terbanyak </h4>
                             </div>
                             <div class="card-body">
-                                Canvendish Banana
+                            {{ $banyak->nama_barang }} 
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                                 <h4>Stok Terendah </h4>
                             </div>
                             <div class="card-body">
-                                Guava Crystal
+                            {{ $sedikit->nama_barang }} 
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                                 <h4>Jumlah Item</h4>
                             </div>
                             <div class="card-body">
-                                20
+                            {{ $count }} 
                             </div>
                         </div>
                     </div>
