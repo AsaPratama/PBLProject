@@ -17,7 +17,7 @@ class BarangKeluarSeeder extends Seeder
         // Buat data dummy untuk tabel barang_keluar
         $data = [
             [
-                'kode_barang' => 'KODE1',
+                'kode_barang' => '1',
                 'nama_barang' => 'Barang Keluar 1',
                 'tanggal_waktu' => now(),
                 'grade' => 'A',
@@ -27,7 +27,7 @@ class BarangKeluarSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'kode_barang' => 'KODE2',
+                'kode_barang' => '2',
                 'nama_barang' => 'Barang Keluar 2',
                 'tanggal_waktu' => now(),
                 'grade' => 'B',
@@ -40,6 +40,6 @@ class BarangKeluarSeeder extends Seeder
         ];
 
         // Masukkan data ke dalam tabel menggunakan DB::table
-        DB::table('barang_keluar')->insert($data);
+        //DB::table('barang_keluar')->insert($data);
     }
 }

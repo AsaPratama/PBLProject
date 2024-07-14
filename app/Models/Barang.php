@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\BarangKeluar;
 
 class Barang extends Model
 {
@@ -20,4 +22,8 @@ class Barang extends Model
         'grade',
         'stok',
     ];
+    public function barang_keluar(): HasMany
+    {
+        return $this->hasMany(BarangKeluar::class, 'kode_barang');
+    }
 }

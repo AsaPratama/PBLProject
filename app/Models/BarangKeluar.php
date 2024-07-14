@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Barang;
 
 class BarangKeluar extends Model
 {
@@ -20,12 +23,13 @@ class BarangKeluar extends Model
         'kode_barang', 'nama_barang', 'tanggal_waktu', 'grade', 'kuantitas', 'user'
     ];
 
+    public function barang1(): BelongsTo
+    {
+        return $this->belongsTo(Barang::class);
+    }
     // Timestamps
     public $timestamps = true;
 
-    // Define the relationship with BarangMasuk model
-    public function barangMasuk()
-    {
-        return $this->belongsTo(BarangMasuk::class, 'id', 'id');
-    }
+  
+    
 }

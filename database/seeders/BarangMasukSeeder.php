@@ -40,6 +40,6 @@ class BarangMasukSeeder extends Seeder
         ];
 
         // Masukkan data ke dalam tabel menggunakan DB::table
-        DB::table('barang_masuk')->insert($data);
+        //DB::table('barang_masuk')->insert($data);
     }
 }

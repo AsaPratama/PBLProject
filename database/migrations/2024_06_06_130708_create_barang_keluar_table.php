@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('barang_keluar', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_barang');
+            $table->integer('kode_barang');
+            $table->foreign('kode_barang')->references('kode_barang')->on('barang');
             $table->string('nama_barang');
             $table->dateTime('tanggal_waktu');
             $table->string('grade');

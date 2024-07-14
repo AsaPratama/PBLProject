@@ -3,19 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\BarangKeluar;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
 class BarangKeluarController extends Controller
 {
     public function index()
     {
-        $barangKeluar = BarangKeluar::all();
+        $barangKeluar = BarangKeluar::all();    
+        //return $barangKeluar;   
         return view('pages.barang_keluar.index', compact('barangKeluar'));
     }
 
     public function create()
     {
-        return view('pages.barang_keluar.create');
+        $master_barang = Barang::all();
+        return view('pages.barang_keluar.create', compact('master_barang'));
     }
 
     public function store(Request $request)

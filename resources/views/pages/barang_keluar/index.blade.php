@@ -61,7 +61,7 @@
                                                 <td>{{ $barang->grade }}</td>
                                                 <td>{{ $barang->kuantitas }}</td>
                                                 <td>
-                                                    <a href="{{ route('barang_keluar.edit', $barang->id) }}" class="btn btn-warning">Edit</a>
+
                                                     <form action="{{ route('barang_keluar.destroy', $barang->id) }}" method="POST" style="display:inline;">
                                                         @csrf
                                                         @method('DELETE')

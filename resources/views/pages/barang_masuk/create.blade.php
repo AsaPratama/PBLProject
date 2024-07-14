@@ -43,8 +43,11 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="kode_barang">Kode Barang</label>
-                                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang') }}" required>
+                                        <label for="nama_barang">Nama Barang</label>
+                                        <select class="form-control" name="">
+                                            <option disabled value="">Pilihan</option>
+                                                <option value="">Pilihan 1</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">

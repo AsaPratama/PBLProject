@@ -33,13 +33,11 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="kode_barang">Kode Barang</label>
-                                        <input type="text" name="kode_barang" id="kode_barang" class="form-control" required>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="nama_barang">Nama Barang</label>
-                                        <input type="text" name="nama_barang" id="nama_barang" class="form-control" required>
+                                        <select class="form-control" name="">
+                                            <option disabled value="">Pilihan</option>
+                                                <option value="">Pilihan 1</option>
+                                        </select>
                                     </div>
 
                                     <div class="form-group">
