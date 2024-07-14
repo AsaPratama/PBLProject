@@ -70,10 +70,7 @@
                                         <input type="number" class="form-control" id="kuantitas" name="kuantitas" value="{{ old('kuantitas') }}" required>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="user">User</label>
-                                        <input type="text" class="form-control" id="user" name="user" value="{{ old('user') }}" required>
-                                    </div>
+                                   
 
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </form>

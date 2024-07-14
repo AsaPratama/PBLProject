@@ -56,11 +56,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="user">User</label>
-                                        <input type="text" name="user" id="user" class="form-control" required>
-                                    </div>
-
-                                    <div class="form-group">
                                         <button type="submit" class="btn btn-primary">Create</button>
                                         <a href="{{ route('barang_keluar.index') }}" class="btn btn-secondary">Cancel</a>
                                     </div>
