@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\BarangMasuk;
 use Illuminate\Http\Request;
 
 class LogMasukController extends Controller
@@ -11,7 +11,8 @@ class LogMasukController extends Controller
      */
     public function index()
     {
-        return view('pages.log.logMasuk');
+        $barang = BarangMasuk::all();
+        return view('pages.log.logMasuk', compact('barang'));
     }
 
     /**

@@ -30,23 +30,28 @@
                                     <table class="table table-bordered table-md">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
                                                 <th>Kode Barang</th>
                                                 <th>Nama Barang</th>
-                                                <th>Tanggal Waktu</th>
                                                 <th>Grade</th>
-                                                <th>Kuantitas</th>
+                                                <th>Stok awal</th>
+                                                <th>Kuantitas Masuk</th>
+                                                <th>Stok Akhir</th>
+                                                <th>Tanggal Masuk</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>                                                   
-                                                    <td></td>                                                   
-                                                </tr>
+                                        @foreach ($barang as $barangs)
+                                            <tr>
+                                                <td>{{ $barangs->kode_barang }}</td>
+                                                <td>{{ $barangs->nama_barang }}</td>
+                                                <td>{{ $barangs->grade }}</td>
+                                                <td>{{ $barangs->stok }}</td> 
+                                                <td>{{ $barangs->masuk }}</td> 
+                                                <td>{{ $barangs->stok_akhir }}</td> 
+                                                <td>{{ $barangs->created_at }}</td>    
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
