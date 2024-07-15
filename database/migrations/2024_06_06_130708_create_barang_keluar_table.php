@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('barang_keluar', function (Blueprint $table) {
             $table->id();
             $table->integer('kode_barang');
-            $table->foreign('kode_barang')->references('kode_barang')->on('barang');
             $table->string('nama_barang');
-            $table->dateTime('tanggal_waktu');
             $table->string('grade');
-            $table->integer('kuantitas');
-            $table->string('user');
+            $table->integer('stok');
+            $table->integer('keluar');
+            $table->integer('stok_akhir');
             $table->timestamps();
         });
     }

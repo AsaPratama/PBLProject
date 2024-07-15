@@ -20,13 +20,10 @@ class BarangKeluar extends Model
 
     // Specify the attributes that are mass assignable
     protected $fillable = [
-        'kode_barang', 'nama_barang', 'tanggal_waktu', 'grade', 'kuantitas', 'user'
+        'kode_barang', 'nama_barang', 'grade', 'stok', 'keluar', 'stok_akhir'
     ];
 
-    public function barang1(): BelongsTo
-    {
-        return $this->belongsTo(Barang::class);
-    }
+    
     // Timestamps
     public $timestamps = true;
 

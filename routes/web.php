@@ -49,6 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('barang_masuk/{id}', [BarangMasukController::class, 'update'])->name('barang_masuk.update');
     Route::delete('barang_masuk/{id}', [BarangMasukController::class, 'destroy'])->name('barang_masuk.destroy');
     Route::get('barang_masuk/riwayat', [BarangMasukController::class, 'riwayat'])->name('barang_masuk.riwayat');
+    Route::get('barang_masuk/{id}/tambah', [BarangMasukController::class, 'tambah'])->name('barang_masuk.tambah');
 
     // Barang Keluar
     Route::get('barang_keluar', [BarangKeluarController::class, 'index'])->name('barang_keluar.index');
@@ -58,6 +59,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('barang_keluar/{id}', [BarangKeluarController::class, 'update'])->name('barang_keluar.update');
     Route::delete('barang_keluar/{id}', [BarangKeluarController::class, 'destroy'])->name('barang_keluar.destroy');
     Route::get('barang_keluar/riwayat', [BarangKeluarController::class, 'riwayat'])->name('barang_keluar.riwayat');
+    Route::get('barang_keluar/{id}/kurang', [BarangKeluarController::class, 'kurang'])->name('barang_keluar.kurang');
 
     //LOG
     Route::resource('log_keluar', LogKeluarController::class);

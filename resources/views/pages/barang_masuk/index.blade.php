@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@push('style')
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="{{ asset('library/selectric/public/selectric.css') }}">
+@endpush
+
 @section('main')
     <div class="main-content">
         <section class="section">
@@ -22,7 +27,7 @@
                             <div class="card-header">
                                 <h4>Barang Masuk</h4>
                                 <div class="section-header-button">
-                                    <a href="{{ route('barang_masuk.create') }}" class="btn btn-primary">Add new</a>
+                                   
                                 </div>
                             </div>
                             <div class="card-body">
@@ -37,31 +42,24 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Kode Barang</th>
                                             <th>Nama Barang</th>
-                                            <th>Tanggal Waktu</th>
                                             <th>Grade</th>
-                                            <th>Kuantitas</th>
+                                            <th>Stok</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($barangMasuk as $barang)
                                             <tr>
-                                                <td>{{ $barang->id }}</td>
                                                 <td>{{ $barang->kode_barang }}</td>
                                                 <td>{{ $barang->nama_barang }}</td>
-                                                <td>{{ $barang->tanggal_waktu }}</td>
                                                 <td>{{ $barang->grade }}</td>
-                                                <td>{{ $barang->kuantitas }}</td>
+                                                <td>{{ $barang->stok }}</td>
                                                 <td>
-                                                    <a href="{{ route('barang_masuk.edit', $barang->id) }}" class="btn btn-warning">Edit</a>
-                                                    <form action="{{ route('barang_masuk.destroy', $barang->id) }}" method="POST" style="display:inline;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                                    </form>
+                                                    <a href="{{ route('barang_masuk.edit', $barang  ->kode_barang) }}" class="btn btn-info">Masukan barang</a>  
+                                                    @csrf
+                                                    @method('POST')     
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -75,3 +73,10 @@
         </section>
     </div>
 @endsection
+
+@push('scripts')
+    <!-- JS Libraries -->
+    <script src="{{ asset('library/selectric/public/jquery.selectric.min.js') }}"></script>
+    <!-- Page Specific JS File -->
+    <script src="{{ asset('js/page/features-posts.js') }}"></script>
+@endpush

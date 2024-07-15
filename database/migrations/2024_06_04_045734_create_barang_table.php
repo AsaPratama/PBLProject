@@ -17,7 +17,7 @@ class CreateBarangTable extends Migration
             $table->integer('kode_barang')->primary();
             $table->char('nama_barang', 20);
             $table->char('grade', 5);
-            $table->smallInteger('stok');
+            $table->integer('stok');
             $table->timestamps(); // Optional: for created_at and updated_at columns
 
             $table->unique(['kode_barang', 'nama_barang']); // Tambahkan unique constraint

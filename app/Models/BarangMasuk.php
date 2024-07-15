@@ -17,7 +17,7 @@ class BarangMasuk extends Model
 
     // Specify the attributes that are mass assignable
     protected $fillable = [
-        'kode_barang', 'nama_barang', 'tanggal_waktu', 'grade', 'kuantitas', 'user'
+         'kode_barang', 'nama_barang', 'grade', 'stok', 'masuk', 'stok_akhir'
     ];
 
     // Timestamps

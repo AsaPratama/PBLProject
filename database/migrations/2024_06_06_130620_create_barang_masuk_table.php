@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('kode_barang');
             $table->string('nama_barang');
-            $table->dateTime('tanggal_waktu');
             $table->string('grade');
-            $table->integer('kuantitas');
-            $table->string('user');
+            $table->integer('stok');
+            $table->integer('masuk');
+            $table->integer('stok_akhir');
             $table->timestamps();
 
         });

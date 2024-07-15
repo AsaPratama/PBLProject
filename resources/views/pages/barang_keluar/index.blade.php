@@ -27,7 +27,7 @@
                             <div class="card-header">
                                 <h4>Barang Keluar</h4>
                                 <div class="section-header-button">
-                                    <a href="{{ route('barang_keluar.create') }}" class="btn btn-primary">Add new</a>
+                                   
                                 </div>
                             </div>
                             <div class="card-body">
@@ -42,31 +42,24 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
                                             <th>Kode Barang</th>
                                             <th>Nama Barang</th>
-                                            <th>Tanggal Waktu</th>
                                             <th>Grade</th>
-                                            <th>Kuantitas</th>
+                                            <th>Stok</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($barangKeluar as $barang)
                                             <tr>
-                                                <td>{{ $barang->id }}</td>
                                                 <td>{{ $barang->kode_barang }}</td>
                                                 <td>{{ $barang->nama_barang }}</td>
-                                                <td>{{ $barang->tanggal_waktu }}</td>
                                                 <td>{{ $barang->grade }}</td>
-                                                <td>{{ $barang->kuantitas }}</td>
+                                                <td>{{ $barang->stok }}</td>
                                                 <td>
-
-                                                    <form action="{{ route('barang_keluar.destroy', $barang->id) }}" method="POST" style="display:inline;">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                                    </form>
+                                                    <a href="{{ route('barang_keluar.edit', $barang->kode_barang) }}" class="btn btn-info">Keluarkan barang</a>  
+                                                    @csrf
+                                                    @method('POST')     
                                                 </td>
                                             </tr>
                                         @endforeach

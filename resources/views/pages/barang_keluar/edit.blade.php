@@ -12,7 +12,7 @@
                 <h1>Edit Barang Keluar</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ url('home') }}">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="{{ route('barang_keluar.index') }}">Barang Keluar</a></div>
+                    <div class="breadcrumb-item"><a href="#">Barang Keluar</a></div>
                     <div class="breadcrumb-item">Edit</div>
                 </div>
             </div>
@@ -39,41 +39,35 @@
                                     </div>
                                 @endif
 
-                                <form action="{{ route('barang_keluar.update', $barang->id) }}" method="POST">
+                                <form action="{{ route('barang_keluar.kurang', $item_keluar->kode_barang) }}" method="POST">
                                     @csrf
-                                    @method('PUT')
+                                    @method('GET')
 
                                     <div class="form-group">
                                         <label for="kode_barang">Kode Barang</label>
-                                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang', $barang->kode_barang) }}" required>
+                                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang', $item_keluar->kode_barang) }}" readonly>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="nama_barang">Nama Barang</label>
-                                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ old('nama_barang', $barang->nama_barang) }}" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="tanggal_waktu">Tanggal Waktu</label>
-                                        <input type="datetime-local" class="form-control" id="tanggal_waktu" name="tanggal_waktu" value="{{ old('tanggal_waktu', $barang->tanggal_waktu) }}" required>
+                                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ old('nama_barang', $item_keluar->nama_barang) }}" readonly>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="grade">Grade</label>
-                                        <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade', $barang->grade) }}" required>
+                                        <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade', $item_keluar->grade) }}" readonly>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="kuantitas">Kuantitas</label>
-                                        <input type="number" class="form-control" id="kuantitas" name="kuantitas" value="{{ old('kuantitas', $barang->kuantitas) }}" required>
+                                        <label for="kuantitas">Stok</label>
+                                        <input type="text" class="form-control" id="stok" name="stok" value="{{ old('stok', $item_keluar->stok) }}" readonly>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="user">User</label>
-                                        <input type="text" class="form-control" id="user" name="user" value="{{ old('user', $barang->user) }}" required>
+                                        <label for="kuantitas">Kuantitas Keluar</label>
+                                        <input type="number" class="form-control" id="keluar" name="keluar" value="" required>
                                     </div>
-
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>

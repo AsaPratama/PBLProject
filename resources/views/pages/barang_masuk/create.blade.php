@@ -12,14 +12,14 @@
                 <h1>Create Barang Masuk</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ url('home') }}">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="{{ route('barang_masuk.index') }}">Barang Masuk</a></div>
+                    <div class="breadcrumb-item"><a href="{{ route('barang_Masuk.index') }}">Barang Keluar</a></div>
                     <div class="breadcrumb-item">Create</div>
                 </div>
             </div>
             <div class="section-body">
                 <div class="row">
                     <div class="col-12">
-                        @include('layouts.alert') <!-- Pastikan ini sudah sesuai dengan layout Anda -->
+                        @include('layouts.alert')
                     </div>
                 </div>
                 <div class="row">
@@ -29,17 +29,7 @@
                                 <h4>Create Barang Masuk</h4>
                             </div>
                             <div class="card-body">
-                                @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-
-                                <form action="{{ route('barang_masuk.store') }}" method="POST">
+                                <form method="POST" action="{{ route('barang_keluar.store') }}">
                                     @csrf
 
                                     <div class="form-group">
@@ -51,28 +41,24 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="nama_barang">Nama Barang</label>
-                                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ old('nama_barang') }}" required>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="tanggal_waktu">Tanggal Waktu</label>
-                                        <input type="datetime-local" class="form-control" id="tanggal_waktu" name="tanggal_waktu" value="{{ old('tanggal_waktu') }}" required>
+                                        <input type="datetime-local" name="tanggal_waktu" id="tanggal_waktu" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="grade">Grade</label>
-                                        <input type="text" class="form-control" id="grade" name="grade" value="{{ old('grade') }}" required>
+                                        <input type="text" name="grade" id="grade" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="kuantitas">Kuantitas</label>
-                                        <input type="number" class="form-control" id="kuantitas" name="kuantitas" value="{{ old('kuantitas') }}" required>
+                                        <input type="number" name="kuantitas" id="kuantitas" class="form-control" required>
                                     </div>
 
-                                   
-
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Create</button>
+                                        <a href="{{ route('barang_keluar.index') }}" class="btn btn-secondary">Cancel</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>

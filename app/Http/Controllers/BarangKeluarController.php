@@ -10,67 +10,82 @@ class BarangKeluarController extends Controller
 {
     public function index()
     {
-        $barangKeluar = BarangKeluar::all();    
-        //return $barangKeluar;   
+        $barangKeluar = Barang::all();    
         return view('pages.barang_keluar.index', compact('barangKeluar'));
     }
 
     public function create()
     {
-        $master_barang = Barang::all();
-        return view('pages.barang_keluar.create', compact('master_barang'));
+       //return $kode_barang; 
     }
 
     public function store(Request $request)
     {
-        $request->validate([
-            'kode_barang' => 'required|string|max:255',
-            'nama_barang' => 'required|string|max:255',
-            'tanggal_waktu' => 'required|date',
-            'grade' => 'required|string|max:255',
-            'kuantitas' => 'required|integer',
-            'user' => 'required|string|max:255',
-        ]);
-
-        BarangKeluar::create($request->all());
-
-        return redirect()->route('barang_keluar.index')->with('success', 'Data created successfully');
-    }
+        
+         }
 
     public function edit($id)
     {
-        $barang = BarangKeluar::findOrFail($id);
-        return view('pages.barang_keluar.edit', compact('barang'));
+        $item_keluar= Barang::find($id);
+        return view('pages.barang_keluar.edit', compact('item_keluar'));
+
     }
+
+    public function kurang(Request $request, $id )
+    {
+
+       
+       
+         // Validasi input dari pengguna
+         $request->validate([
+            'stok' => 'required|integer|min:1',
+        ]);
+
+        // Ambil item berdasarkan ID
+        $jumlah_keluar = Barang::find($id);
+
+        if (!$jumlah_keluar) {
+            return response()->json(['message' => 'Barang tidak ditemukan'], 404);
+        }
+
+        // Kurangi stok barang
+        $quantityToReduce = $request->input('keluar');
+        if ($jumlah_keluar->stok < $quantityToReduce) {
+            return response()->json(['message' => 'Stok barang tidak mencukupi'], 400);
+        }
+
+        $jumlah_keluar->stok -= $quantityToReduce;
+        $jumlah_keluar->save();
+
+        $validatedData = $request->validate([
+            'kode_barang' => 'required|integer',
+            'nama_barang' => 'required|string',
+            'grade' => 'required|string',
+            'stok' => 'required|integer',
+            'keluar' => 'required|integer'
+        ]);
+        $validatedData['stok_akhir'] = $validatedData['stok'] - $request->input('keluar');
+
+        //return $validatedData;
+
+       
+        $Simpan = BarangKeluar::create($validatedData);
+
+       
+        return redirect()->route('barang_keluar.index')->with('success', 'Item created successfully.');
+    }
+    
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'kode_barang' => 'required|string|max:255',
-            'nama_barang' => 'required|string|max:255',
-            'tanggal_waktu' => 'required|date',
-            'grade' => 'required|string|max:255',
-            'kuantitas' => 'required|integer',
-            'user' => 'required|string|max:255',
-        ]);
-
-        $barang = BarangKeluar::findOrFail($id);
-        $barang->update($request->all());
-
-        return redirect()->route('barang_keluar.index')->with('success', 'Data updated successfully');
     }
 
     public function destroy($id)
     {
-        $barang = BarangKeluar::findOrFail($id);
-        $barang->delete();
-
-        return redirect()->route('barang_keluar.index')->with('success', 'Data deleted successfully');
+       
     }
 
     public function riwayat()
     {
-        $barangKeluar = BarangKeluar::all();
-        return view('pages.barang_keluar.riwayat', compact('barangKeluar'));
     }
 }
