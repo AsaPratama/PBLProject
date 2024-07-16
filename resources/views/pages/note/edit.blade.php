@@ -58,13 +58,9 @@
                             
                         </div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-primary">Simpan</button>
+                            <button class="btn btn-info">Submit</button>
                         </div>
-                        <div class="card-footer text-left">
-                            <a href="">
-                                <button class="btn btn-primary">Kembali</button>
-                            </a>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

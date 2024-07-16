@@ -67,7 +67,7 @@
                                         <label for="kuantitas">Kuantitas Keluar</label>
                                         <input type="number" class="form-control" id="keluar" name="keluar" value="" required>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-info">Submit</button>
                                 </form>
                             </div>
                         </div>

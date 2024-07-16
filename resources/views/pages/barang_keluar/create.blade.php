@@ -57,7 +57,7 @@
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary">Create</button>
-                                        <a href="{{ route('barang_keluar.index') }}" class="btn btn-secondary">Cancel</a>
+                                        <a href="{{ route('barang_keluar.index') }}" class="btn btn-info">Cancel</a>
                                     </div>
                                 </form>
                             </div>

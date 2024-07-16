@@ -32,12 +32,6 @@
                                 <form action="{{ route('barang.update', $barang->kode_barang) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-
-                                    <div class="form-group">
-                                        <label for="kode_barang">Kode Barang</label>
-                                        <input type="number" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang', $barang->kode_barang) }}" readonly>
-                                    </div>
-
                                     <div class="form-group">
                                         <label for="nama_barang">Nama Barang</label>
                                         <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ old('nama_barang', $barang->nama_barang) }}" required>
@@ -53,7 +47,7 @@
                                         <input type="number" class="form-control" id="stok" name="stok" value="{{ old('stok', $barang->stok) }}" required>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-info">Update</button>
                                 </form>
                             </div>
                         </div>

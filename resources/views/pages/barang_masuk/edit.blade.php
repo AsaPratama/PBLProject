@@ -67,7 +67,7 @@
                                         <label for="kuantitas">Kuantitas Masuk</label>
                                         <input type="number" class="form-control" id="masuk" name="masuk" value="" required>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-info">Submit</button>
                                 </form>
                             </div>
                         </div>

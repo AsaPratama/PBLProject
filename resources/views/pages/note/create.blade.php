@@ -40,7 +40,7 @@
                                 @enderror
                             </div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-primary">Simpan Notes</button>
+                            <button class="btn btn-info">Submit</button>
                         </div>
                     </form>
                 </div>

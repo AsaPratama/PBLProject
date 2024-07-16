@@ -10,7 +10,9 @@ use App\Http\Controllers\LogKeluarController;
 use App\Http\Controllers\LogMasukController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\BarangKeluarController;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,9 @@ Route::middleware(['auth'])->group(function () {
 
     // Dashboard
     Route::resource('home', DashboardController::class);
+
+    // Logout 
+    Route::get('auth', [LoginController::class, 'logout'])->name('auth.logout');
 
     // Barang routes
     Route::get('barang', [BarangController::class, 'index'])->name('barang.index');
@@ -63,7 +68,13 @@ Route::middleware(['auth'])->group(function () {
 
     //LOG
     Route::resource('log_keluar', LogKeluarController::class);
+
+
     Route::resource('log_masuk', LogMasukController::class);
+    Route::get('/download-logbarangkeluar-pdf', [LogkeluarController::class, 'downloadpdf']);
+    Route::get('/download-logbarangmasuk-pdf', [LogMasukController::class, 'downloadpdf']);
+
+    
  
 
 
@@ -73,5 +84,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('gudang', GudangController::class);
     Route::resource('note', NoteController::class);
     Route::apiResource('log', LogController::class);
+    
 });
 

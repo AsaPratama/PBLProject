@@ -43,17 +43,12 @@
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="kode_barang">Kode Barang</label>
-                                        <input type="text" class="form-control" id="kode_barang" name="kode_barang" value="{{ old('kode_barang') }}" required>
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for="nama_barang">Nama Barang</label>
                                         <input type="text" class="form-control" id="nama_barang" name="nama_barang" value="{{ old('nama_barang') }}" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="tanggal_waktu">Tanggal Waktu</label>
+                                        <label for="tanggal_waktu">Tanggal Waktu Barang Ditambahkan</label>
                                         <input type="datetime-local" class="form-control" id="tanggal_waktu" name="tanggal_waktu" value="{{ old('tanggal_waktu') }}" required>
                                     </div>
 
@@ -69,7 +64,7 @@
 
                                 
 
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                                    <button type="submit" class="btn btn-info">Tambah</button>
                                 </form>
                             </div>
                         </div>

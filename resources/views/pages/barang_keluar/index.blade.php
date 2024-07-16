@@ -42,6 +42,8 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
+                                            
+                                            <th>No</th>
                                             <th>Kode Barang</th>
                                             <th>Nama Barang</th>
                                             <th>Grade</th>
@@ -52,12 +54,13 @@
                                     <tbody>
                                         @foreach ($barangKeluar as $barang)
                                             <tr>
+                                                <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $barang->kode_barang }}</td>
                                                 <td>{{ $barang->nama_barang }}</td>
                                                 <td>{{ $barang->grade }}</td>
                                                 <td>{{ $barang->stok }}</td>
                                                 <td>
-                                                    <a href="{{ route('barang_keluar.edit', $barang->kode_barang) }}" class="btn btn-info">Keluarkan barang</a>  
+                                                    <a href="{{ route('barang_keluar.edit', $barang->kode_barang) }}" class="btn btn-warning">Keluarkan barang</a>  
                                                     @csrf
                                                     @method('POST')     
                                                 </td>

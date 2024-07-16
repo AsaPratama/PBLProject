@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\BarangMasuk;
+
 use Illuminate\Http\Request;
+use App\Models\BarangMasuk;
+use PDF;
 
 class LogMasukController extends Controller
 {
@@ -16,50 +18,13 @@ class LogMasukController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Download PDF of Barang Keluar.
      */
-    public function create()
+    public function downloadpdf()
     {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $barang = BarangMasuk::all();
+        $pdf = PDF::loadView('pages.log.logbarangmasuk-pdf', compact('barang'));
+        $pdf->setPaper('A4', 'portrait'); // Fix: Correct method name from setPape to setPaper
+        return $pdf->stream('logbarangmasuk.pdf');
     }
 }

@@ -18,7 +18,7 @@ class BarangSeeder extends Seeder
         $data = [
             [
                 'kode_barang' => 1,
-                'nama_barang' => 'Barang A',
+                'nama_barang' => 'Cavendish Banana',
                 'grade' => 'A',
                 'stok' => 100,
                 'created_at' => now(),
@@ -26,7 +26,7 @@ class BarangSeeder extends Seeder
             ],
             [
                 'kode_barang' => 2,
-                'nama_barang' => 'Barang B',
+                'nama_barang' => 'Crystal Guava',
                 'grade' => 'B',
                 'stok' => 50,
                 'created_at' => now(),

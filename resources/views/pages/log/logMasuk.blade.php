@@ -22,14 +22,15 @@
                             <div class="card-header">
                                 <h4>Daftar Barang Masuk</h4>
                                 <div class="card-header-action">
-                                    <a href="{{ route('barang.create') }}" class="btn btn-primary">Cetak PDF</a>
-                                </div>
+                                <a href="{{ url('download-logbarangmasuk-pdf') }}" target="_blank" class="btn btn-success">Cetak PDF</a>
+                            </div>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered table-md">
                                         <thead>
                                             <tr>
+                                                <th>No</th>
                                                 <th>Kode Barang</th>
                                                 <th>Nama Barang</th>
                                                 <th>Grade</th>
@@ -42,6 +43,7 @@
                                         <tbody>
                                         @foreach ($barang as $barangs)
                                             <tr>
+                                                <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $barangs->kode_barang }}</td>
                                                 <td>{{ $barangs->nama_barang }}</td>
                                                 <td>{{ $barangs->grade }}</td>

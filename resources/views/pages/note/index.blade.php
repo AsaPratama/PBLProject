@@ -11,10 +11,10 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>All Notes</h1>
+                <h1>Notes</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{url('home')}}">Dashboard</a></div>
-                    <div class="breadcrumb-item">All Notes</div>
+                    <div class="breadcrumb-item">Notes</div>
                 </div>
             </div>
             <div class="section-body">
@@ -29,9 +29,9 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Notes</h4>
-                                <div class="section-header-button">
-                                    <a href="{{ route('note.create') }}" class="btn btn-primary">New Notes</a>
+                                <h4>Notes</h4>
+                                <div class="card-header-action">
+                                    <a href="{{ route('note.create') }}" class="btn btn-success">Tambah Notes</a>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -69,7 +69,7 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                             <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                <i class="fas fa-times"></i> Delete
+                                                                <i class="fas fa-times"></i> Hapus
                                                             </button>
                                                         </form>
                                                     </div>

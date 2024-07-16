@@ -16,6 +16,7 @@ class Barang extends Model
     public $incrementing = false; // Because kode_barang is not an auto-incrementing primary key
     protected $keyType = 'integer';
 
+
     protected $fillable = [
         'kode_barang',
         'nama_barang',
