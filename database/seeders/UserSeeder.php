@@ -17,11 +17,11 @@ class UserSeeder extends Seeder
         User::factory(250)->create();
 
         User::create([
-            'name' => 'Asa Zelig Pratama',
-            'email' => 'asa@gmail.com',
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('12344321'),
-            'roles' => 'mahasiswa',
+            'password' => Hash::make('admin123'),
+            'roles' => 'admin',
         ]);
     }
 }

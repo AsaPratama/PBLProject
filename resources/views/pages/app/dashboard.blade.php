@@ -82,7 +82,7 @@
                                     @foreach($notes as $note)
                                         <tr>
                                             <td>{{ $loop->index + 1 }}.</td>
-                                            <td>B{{ $note->isi }}</td>
+                                            <td>{{ $note->isi }}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
